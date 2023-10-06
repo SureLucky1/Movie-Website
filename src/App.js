@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-// import Example from "./Components/Navbar/Navbar";
 import Home from "./Components/Home";
 import Description from "./Components/Des/Des";
 import axios from "axios";
@@ -43,7 +42,6 @@ function App() {
   return (
     <div>
       <Dropdownn moviesGenres={moviesGenres} />
-      {/* <Example moviesGenres={moviesGenres} /> */}
     <div className="App">
       <Routes>
         <Route path="/" element={<Home posts={posts} />} />

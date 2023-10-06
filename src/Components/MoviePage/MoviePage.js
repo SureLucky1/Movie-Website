@@ -34,9 +34,6 @@ const MoviePage = () => {
       });
   }, [type, pageNum]);
 
-  // useEffect(() => {
-
-  // }, [movieList]);
 
   function heartFunction(movieId) {
     if (favorite.includes(movieId)) {

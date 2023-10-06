@@ -36,13 +36,6 @@ const Description = () => {
 
   return (
     <div className="backdrop container-fluid" >
-
-      {/* <div className="mbackground"style={{backgroundImage:`url(https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path})`}}> */}
-      {/* <div className="mbackground">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path}`}
-          alt="filmBackground"
-        />        </div>     */}
         <style>
         {`
     .mcontent-big {
@@ -66,7 +59,6 @@ background-position-y: top;
           <div className="filmAndRate">
             <p class="des-title">{movieDetails.title}</p>
             <span id="rate">{rate}</span>
-            {/* <span>{movieDetails.production_countries[0].name}</span> */}
           </div>
           <span id="releaseDate">Release Date:{movieDetails.release_date}</span>
           <div class="des-genres">
