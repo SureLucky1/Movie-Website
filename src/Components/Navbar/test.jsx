@@ -146,7 +146,7 @@ function Dropdownn({ moviesGenres }) {
                             to={`moviesGenres/${item.id}`}
                             style={{ textDecoration: "none", color: "#fff" }}
                           >
-                            <NavLink className="dropdown-item">{item.name}</NavLink></Link></li>
+                            <NavLink className="dropdown-item" onClick={()=>setShow(false)}>{item.name}</NavLink></Link></li>
                         ))}
                     </ul>
                 )}
@@ -173,14 +173,13 @@ function Dropdownn({ moviesGenres }) {
                                           <Link
                   to={`/movie/${d.id}`}
                   style={{ textDecoration: "none" }}
-                 className='link'>                            
-                 {/* <div className='desc'> */}
+                 className='link'
+                 onClick={()=>setShoww(false)}>                            
                             <img src={d.poster_path} alt="" />
                             <div>
                             <h1>{d.title}</h1>
                             <p>{d.name}</p>
                         </div>
-                        {/* </div> */}
                         </Link>
 
                         </div>

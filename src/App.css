@@ -7,6 +7,7 @@
 }
 
 
+@import url("./Components/Des/Dess.css");
 
 body {
   margin: 0;
@@ -14,10 +15,10 @@ body {
 
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
   .App {
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     background: rgb(37, 37, 37);
   }
-}
+} */

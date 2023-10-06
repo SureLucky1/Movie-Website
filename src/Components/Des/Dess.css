@@ -3,6 +3,13 @@
   --font-family-Montserrat: "Montserrat", sans-serif;
 }
 
+.App {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(37, 37, 37);
+  padding-top: 40px;
+}
+
 .backdrop {
   position: relative;
   width: 100%;

@@ -1,5 +1,6 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+
+import { Routes, Route, useLocation, useParams } from "react-router-dom";
 import Home from "./Components/Home";
 import Description from "./Components/Des/Des";
 import axios from "axios";
@@ -9,6 +10,8 @@ import GenresPage from "./Components/GenresPage/GenresPage";
 import TopUp from "./Components/TopUp/TopUp"; 
 import Dropdownn from "./Components/Navbar/test"
 function App() {
+  const location = useLocation();   
+  const [overFlow, setOverFlow] = useState(null);
   const [posts, setPosts] = useState([]);
   const [moviesGenres, setMoviesGenres] = useState([]);
 
@@ -38,11 +41,27 @@ function App() {
   useEffect(() => {
     movieGenres();
   }, []);
+  useEffect(() => {
+    if(location.pathname.includes("/movie")){
+      setOverFlow("none");
+      
+    }else{setOverFlow("hidden");
 
+    }
+
+  });
   return (
     <div>
+
       <Dropdownn moviesGenres={moviesGenres} />
     <div className="App">
+      <style>
+        {`
+.App {
+ overflow: ${overFlow};
+}
+        `}
+      </style>
       <Routes>
         <Route path="/" element={<Home posts={posts} />} />
         <Route path="/movies/:type" element={<MoviePage />} />

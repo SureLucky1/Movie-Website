@@ -96,6 +96,10 @@
                 font-weight: 500;
                 color: var(--white);
                 padding: 1rem 1.5rem;
+
+                #icon {
+                    margin-left: 8px;
+                }
             }
 
             .dropdown-list {
@@ -294,12 +298,13 @@
 
             .dropdown {
                 position: relative;
-                width: 31.5%;
+                width: 35%;
                 border-radius: 50px;
                 border: 1px solid var(--white);
                 background-color: var(--black);
                 box-shadow: var(--shadow);
                 cursor: pointer;
+
 
                 .dropdown-text {
                     display: flex;
@@ -335,7 +340,8 @@
                             font-size: 1.4rem;
 
                             &:hover {
-                                margin-left: 0.5rem;
+                                padding-left: 0.5rem;
+
                                 color: var(--yellow);
                             }
                         }
@@ -445,7 +451,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 60px;
+        height: 80px;
         background-color: var(--blue);
         width: 100%;
         z-index: 99;
@@ -466,7 +472,7 @@
                 text-align: center;
 
                 .NavbarBrand {
-                    font-size: 18px;
+                    font-size: 20px;
                     padding: 0;
                     border-radius: 10px;
                     position: relative;
@@ -513,7 +519,7 @@
             .dropdown {
                 display: block;
                 position: relative;
-                width: 140px;
+                width: auto;
                 border-radius: 50px;
                 border: 1px solid var(--white);
                 background-color: var(--black);
@@ -524,17 +530,18 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    font-size: 1rem;
+                    font-size: 2.5rem;
                     font-weight: 500;
                     color: var(--white);
                     padding: 1rem 1.5rem;
+                    width: auto;
                 }
 
                 .dropdown-list {
                     position: absolute;
                     top: 4rem;
                     left: 0;
-                    width: 100%;
+                    width: auto;
                     border-radius: 15px;
                     max-height: 300px;
                     overflow-y: scroll;
@@ -572,16 +579,16 @@
                     height: 100px;
 
                     input {
-                        padding: 1rem;
+                        padding: 0rem;
                         width: 100%;
-                        font-size: 1rem;
+                        font-size: 2rem;
                         font-weight: 500;
                         color: var(--black);
                         border: 0;
                         outline: 0;
 
                         &::placeholder {
-                            font-size: 1rem;
+                            font-size: 2rem;
                             font-weight: 500;
                             color: var(--black);
                         }
