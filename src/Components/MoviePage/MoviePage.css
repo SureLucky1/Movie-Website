@@ -1,0 +1,73 @@
+.slider_title {
+  border-left: 5px solid #e67832;
+  margin-top: 20px;
+  color: #e67832;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.moviebox {
+  border-top-left-radius: 3.5rem;
+  border-top-right-radius: 3.5rem;
+  width: 18vw;
+  margin: 1vw;
+  transition: 0.45s;
+  border: 1px solid #e67832;
+  background-color: #e67832;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.moviebox:hover {
+  filter: grayscale(75%);
+  border: 1px solid #00c3ff;
+  background-color: #00c3ff;
+}
+
+.movieimg {
+  border-top-left-radius: 3.5rem;
+  border-top-right-radius: 3.5rem;
+  width: calc(18vw - 2px);
+  object-fit: cover;
+}
+
+.caption {
+  padding: 5px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.flex-parent {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.heart_btn {
+  margin-top: 5px;
+  border: none;
+  cursor: default;
+  background: none;
+}
+
+.heart_img {
+  width: 20px;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.heart_img_black {
+  width: 20px;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

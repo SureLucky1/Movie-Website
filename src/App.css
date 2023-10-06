@@ -1,0 +1,25 @@
+.App {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(37, 37, 37);
+  padding-top: 40px;
+
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+@media screen and (max-width: 400px) {
+  .App {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(37, 37, 37);
+    /* padding-top: 50px; */
+    /* overflow: hidden; */
+  }
+}
