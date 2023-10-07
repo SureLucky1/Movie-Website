@@ -43,7 +43,7 @@ const GenresPage = ({ moviesGenres }) => {
   }
 
   return (
-    <div>
+    <section>
       <h1 className="slider_title">{moviesGenres.name}</h1>
       <div>
         <div className="flex-parent">
@@ -210,7 +210,7 @@ const GenresPage = ({ moviesGenres }) => {
         </div>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 };
 

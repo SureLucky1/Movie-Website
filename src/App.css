@@ -15,10 +15,9 @@ body {
 
 }
 
-/* @media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .App {
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgb(37, 37, 37);
+    margin-top: 60px;
+    padding-top: 15px;
   }
-} */
+}

@@ -3,13 +3,6 @@
   --font-family-Montserrat: "Montserrat", sans-serif;
 }
 
-.App {
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  background: rgb(37, 37, 37);
-  padding-top: 40px;
-}
-
 .backdrop {
   position: relative;
   width: 100%;
@@ -257,12 +250,14 @@
     display: flex;
     max-width: 100%;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
   .backdrop .mcontent .des-genres #genres {
     display: block;
     background-color: rgba(6, 9, 24, 0.5019607843);
     border-radius: 10px;
     padding: 5px 5px;
+    margin: 5px 5px;
     font-size: 15px;
   }
   .backdrop .mcontent .des-genres:not(:first-child) {
@@ -579,7 +574,7 @@
     width: 10rem;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&display=swap");
   .backdrop {
     height: 100%;

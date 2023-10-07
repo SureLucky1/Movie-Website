@@ -31,7 +31,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 50px;
   background-color: var(--white);
   width: 100%;
 }
@@ -100,6 +99,7 @@
   overflow-y: scroll;
   background-color: black;
   transition: max-height 0.5s;
+  overflow-x: hidden;
 }
 .open .search-bar .dropdown .dropdown-list .dropdown-list-item {
   font-size: 20px;
@@ -135,7 +135,6 @@
   height: 100px;
 }
 .open .search-bar .searchGroup .search-box input {
-  padding: 0.4rem;
   width: 100%;
   font-size: 3rem;
   font-weight: 500;
@@ -156,6 +155,13 @@
 .open .search-bar .searchGroup .search-box i {
   font-size: 1.3rem;
   cursor: pointer;
+  background-color: rgb(233, 239, 61);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 .open .search-bar .searchGroup .bg-white {
   height: 300px;
@@ -207,7 +213,6 @@
   .open .search-bar {
     display: flex;
     align-items: center;
-    border-radius: 50px;
     background-color: var(--white);
     width: 100%;
   }
@@ -268,7 +273,6 @@
     top: 4rem;
     left: 0;
     width: 100%;
-    border-radius: 15px;
     max-height: 300px;
     overflow-y: scroll;
     background-color: black;
@@ -366,10 +370,11 @@
     font-size: 15px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .open {
     position: fixed;
     top: 0px;
+    margin-top: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -429,7 +434,7 @@
   .open .search-bar .dropdown {
     display: block;
     position: relative;
-    width: auto;
+    width: 48%;
     border-radius: 50px;
     border: 1px solid var(--white);
     background-color: var(--black);
@@ -440,7 +445,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--white);
     padding: 1rem 1.5rem;
@@ -450,8 +455,7 @@
     position: absolute;
     top: 4rem;
     left: 0;
-    width: auto;
-    border-radius: 15px;
+    width: 100%;
     max-height: 300px;
     overflow-y: scroll;
     background-color: black;
@@ -473,6 +477,8 @@
     height: 40px;
     flex-direction: column;
     overflow: hidden;
+    width: 51%;
+    text-align: left;
   }
   .open .search-bar .searchGroup .search-box {
     display: flex;
@@ -485,25 +491,33 @@
   .open .search-bar .searchGroup .search-box input {
     padding: 0rem;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 500;
     color: var(--black);
     border: 0;
     outline: 0;
   }
   .open .search-bar .searchGroup .search-box input::-moz-placeholder {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 500;
     color: var(--black);
+    width: 100%;
+    position: relative;
+    right: 0px;
   }
   .open .search-bar .searchGroup .search-box input::placeholder {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 500;
     color: var(--black);
+    width: 100%;
+    position: relative;
+    right: 0px;
   }
   .open .search-bar .searchGroup .search-box i {
     font-size: 1.3rem;
     cursor: pointer;
+    position: relative;
+    left: 7px;
   }
   .open .search-bar .searchGroup .bg-white {
     height: 250px;
@@ -511,7 +525,7 @@
     overflow: scroll;
     width: 100%;
     position: absolute;
-    top: 60px;
+    top: 80px;
     background-color: rgb(255, 255, 255);
     padding: 10px 15px;
     left: 0px;

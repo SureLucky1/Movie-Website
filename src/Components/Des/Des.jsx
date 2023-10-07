@@ -46,7 +46,7 @@ const Description = () => {
   console.log("movieTailer", movieTrailer);
 
   return (
-    <div className="backdrop container-fluid" >
+    <section className="backdrop" >
                              
         <style>
         {`
@@ -149,7 +149,7 @@ background-position-y: top;
       </div>
 
 
-    </div>
+    </section>
   );
 };
 

@@ -123,12 +123,12 @@ function Container({ posts }) {
   }
 
   return (
-    <div>
+    <section>
       <Link to={`/movies/top_rated`} style={{ textDecoration: "none", color: "#fff" }}>
         <h1 className="slider_title">Top-rated</h1>
       </Link>
       
-      <div id="slider1">
+      <section id="slider1">
         <div
           onMouseOver={pauseSlider}
           onMouseOut={runSlider}
@@ -178,7 +178,7 @@ function Container({ posts }) {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
 
       <h1 className="slider_title">Today's Trending</h1>
       <div>
@@ -289,7 +289,7 @@ function Container({ posts }) {
       <Link to={`/movies/now_playing`} style={{ textDecoration: "none", color: "#fff" }}>
       <h1 className="slider_title">Now-playing</h1>
       </Link>
-      <div>
+      <section>
         <div className="flex-parent">
           {nowPlaying.map((post) => (
             <div className="moviebox">
@@ -379,7 +379,7 @@ function Container({ posts }) {
             </div>
           ))}
         </div>
-      </div>
+      </section>
       <div className='prev-next-parent'>
         <div>
           {(nowPlayingPageNum > 1) && <button type='button' className='prev-btn' onClick={()=>{setNowPlayingPageNum(nowPlayingPageNum - 1)}}>Prev page</button>}
@@ -397,7 +397,7 @@ function Container({ posts }) {
       <Link to={`/movies/upcoming`} style={{ textDecoration: "none", color: "#fff" }}>
       <h1 className="slider_title">Upcoming</h1>
       </Link>
-      <div>
+      <section>
         <div className="flex-parent">
           {upComing.map((post) => (
             <div className="moviebox">
@@ -492,7 +492,7 @@ function Container({ posts }) {
             </div>
           ))}
         </div>
-      </div>
+      </section>
       <div className='prev-next-parent'>
         <div>
           {(upComingPageNum > 1) && <button type='button' className='prev-btn' onClick={()=>{setUpComingPageNum(upComingPageNum - 1)}}>Prev page</button>}
@@ -534,7 +534,7 @@ function Container({ posts }) {
         </select>
       </div>
       
-      <div>
+      <section>
         <div className="flex-parent">
           {search.map((post) => (
             <div className="moviebox">
@@ -629,7 +629,7 @@ function Container({ posts }) {
             </div>
           ))}
         </div>
-      </div>
+      </section>
       <div className='prev-next-parent'>
         <div>
           {(searchPageNum > 1) && <button type='button' className='prev-btn' onClick={()=>{setSearchPageNum(searchPageNum - 1)}}>Prev page</button>}
@@ -644,7 +644,7 @@ function Container({ posts }) {
         </div>
       </div>
       
-    </div>
+    </section>
   );
 }
 

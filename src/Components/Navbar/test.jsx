@@ -102,16 +102,16 @@ function Dropdownn({ moviesGenres }) {
     }, [show]);
 
     return (
-        <div className='open'>
+        <header className='open'>
         <div className="search-bar">
         <Link to={"/"} style={{ textDecoration: "none", color: "#fff" }} className='theme'>
             <NavbarBrand className="NavbarBrand" data-spotlight="C I N E P H I L E">
             C I N E P H I L E
             </NavbarBrand>
           </Link>
-            <div className="dropdown">
-                <div id="drop-text" className="dropdown-text" onClick={() => {setShow(!show); setShoww(false);}}>
-                    <span id="span">{text}</span>
+            <div className="dropdown" >
+                <div id="drop-text" className="dropdown-text" tabIndex="-1" onBlur={() => {setTimeout(() => {setShow(false)}, 0)}} onClick={() => {setShow(!show); setShoww(false);}} >
+                    <span  id="span">{text}</span>
                     <i id="icon" className="fa-solid fa-chevron-down" style={{ transform:`rotate(${rotate})`,transitionDuration: "0.3s"}}></i>
                 </div>
                 {show && (
@@ -146,7 +146,7 @@ function Dropdownn({ moviesGenres }) {
                             to={`moviesGenres/${item.id}`}
                             style={{ textDecoration: "none", color: "#fff" }}
                           >
-                            <NavLink className="dropdown-item" onClick={()=>setShow(false)}>{item.name}</NavLink></Link></li>
+                            <NavLink className="dropdown-item">{item.name}</NavLink></Link></li>
                         ))}
                     </ul>
                 )}
@@ -163,7 +163,7 @@ function Dropdownn({ moviesGenres }) {
                         setShoww(false)
                       }
                       setMovies(movies.filter(f => f.title.toLowerCase().includes(e.target.value)))
-                    }}placeholder={placeholder} />
+                    }}placeholder={placeholder} onBlur={() => {setTimeout(() => {setShoww(false)}, 0)}}/>
                 <i className="fa-solid fa-magnifying-glass"></i>
             </div>
              {showw === true &&<div className="bg-white shadow border">
@@ -174,8 +174,8 @@ function Dropdownn({ moviesGenres }) {
                   to={`/movie/${d.id}`}
                   style={{ textDecoration: "none" }}
                  className='link'
-                 onClick={()=>setShoww(false)}>                            
-                            <img src={d.poster_path} alt="" />
+                 >                            
+                            <img src={`https://image.tmdb.org/t/p/original/${d.poster_path}`} alt="" />
                             <div>
                             <h1>{d.title}</h1>
                             <p>{d.name}</p>
@@ -189,7 +189,7 @@ function Dropdownn({ moviesGenres }) {
                 </div>}
         </div>
         </div>
-        </div>
+        </header>
     );
 }
 

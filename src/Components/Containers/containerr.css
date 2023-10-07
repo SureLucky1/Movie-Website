@@ -94,7 +94,6 @@
   border-top-right-radius: 3.5rem;
   width: 18vw;
   margin: 1vw;
-  transition: 0.45s;
   border: 1px solid #e67832;
   background-color: #e67832;
   color: white;
@@ -173,6 +172,9 @@
 .prev-next-parent .content {
   font-size: 16px;
   color: white;
+}
+.prev-next-parent .content input {
+  text-align: center;
 }
 
 .search-parent {
@@ -316,7 +318,6 @@
     border-top-left-radius: 0rem;
     border-top-right-radius: 0rem;
     width: 30%;
-    transition: 0.45s;
     border: 1px solid #e67832;
     background-color: #e67832;
     color: white;
@@ -532,7 +533,6 @@
     border-top-left-radius: 0rem;
     border-top-right-radius: 0rem;
     width: 45%;
-    transition: 0.45s;
     border: 1px solid #e67832;
     background-color: #e67832;
     color: white;

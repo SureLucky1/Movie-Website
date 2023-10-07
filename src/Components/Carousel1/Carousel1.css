@@ -86,7 +86,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .image-silder {
     position: relative;
     height: 600px;

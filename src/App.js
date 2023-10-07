@@ -12,6 +12,7 @@ import Dropdownn from "./Components/Navbar/test"
 function App() {
   const location = useLocation();   
   const [overFlow, setOverFlow] = useState(null);
+  const [marginTop, setmarginTop] = useState(null);
   const [posts, setPosts] = useState([]);
   const [moviesGenres, setMoviesGenres] = useState([]);
 
@@ -42,11 +43,11 @@ function App() {
     movieGenres();
   }, []);
   useEffect(() => {
-    if(location.pathname.includes("/movie")){
+    if(location.pathname.includes("/movie/")){
       setOverFlow("none");
-      
+      setmarginTop("30px")
     }else{setOverFlow("hidden");
-
+    setmarginTop("60px")
     }
 
   });
@@ -54,11 +55,12 @@ function App() {
     <div>
 
       <Dropdownn moviesGenres={moviesGenres} />
-    <div className="App">
+    <main className="App">
       <style>
         {`
 .App {
  overflow: ${overFlow};
+ margin-top:${marginTop};
 }
         `}
       </style>
@@ -72,7 +74,7 @@ function App() {
         />
       </Routes>
       <TopUp />
-    </div>
+    </main>
     </div>
   );
 }

@@ -45,7 +45,7 @@ const MoviePage = () => {
   }
 
   return (
-    <div>
+    <section>
       <h1 className="slider_title">
         {type.charAt(0).toUpperCase() + type.slice(1).replace("_", "-")}
       </h1>
@@ -201,7 +201,7 @@ const MoviePage = () => {
       </div>
 
       <Footer />
-    </div>
+    </section>
   );
 };
 
