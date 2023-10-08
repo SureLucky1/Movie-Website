@@ -45,7 +45,7 @@ function App() {
   useEffect(() => {
     if(location.pathname.includes("/movie/")){
       setOverFlow("none");
-      setmarginTop("30px")
+      setmarginTop("0px")
     }else{setOverFlow("hidden");
     setmarginTop("60px")
     }

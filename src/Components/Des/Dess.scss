@@ -7,15 +7,16 @@
 
 
 .backdrop {
-    position: relative;
+
     width: 100%;
-    height: auto;
+    height: 100%;
+
 
     .mcontent-big {
         position: absolute;
         display: flex;
         width: 100%;
-        height: auto;
+        height: 100%;
 
         .mcleft {
             .poster {
@@ -110,6 +111,7 @@
                     font-family: var(--font-family-Montserrat);
                     font-weight: 900;
                     width: 10rem;
+
                 }
             }
         }
@@ -215,7 +217,7 @@
                 margin-top: 10px;
                 font-size: 16px;
                 font-family: var(--font-family-Montserrat);
-
+                margin-bottom: 15px;
                 width: 10rem;
             }
         }
@@ -740,6 +742,7 @@
         flex-direction: column;
         justify-content: center;
 
+
         .mbackground-big {
             position: absolute;
             opacity: 0.8;
@@ -764,7 +767,7 @@
             justify-content: center;
             flex-wrap: wrap;
             width: 100%;
-            top: 20px;
+            top: 70px;
             padding: 0px 20px;
             background-color: #06091880;
 
@@ -860,6 +863,7 @@
                     border-radius: 10px;
                     cursor: pointer;
                     margin-top: 10px;
+                    margin-bottom: 15px;
                     font-size: 16px;
                     font-family: var(--font-family-Montserrat);
 

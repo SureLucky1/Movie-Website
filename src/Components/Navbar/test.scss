@@ -41,7 +41,7 @@
             padding: 0;
             border-radius: 10px;
             position: relative;
-
+            top: 5px;
             font-family: Helvetica;
             margin-left: 50px;
             color: gray;
@@ -51,7 +51,7 @@
                 content: attr(data-spotlight);
                 color: yellow;
                 position: absolute;
-                top: 0px;
+                top: 5px;
                 left: 0;
                 -webkit-clip-path: ellipse(100px 100px at 0% 50%);
                 clip-path: ellipse(100px 100px at 0% 50%);
@@ -86,6 +86,7 @@
             background-color: var(--black);
             box-shadow: var(--shadow);
             cursor: pointer;
+            margin-top: 18px;
 
             .dropdown-text {
                 display: flex;
@@ -103,7 +104,7 @@
 
             .dropdown-list {
                 position: absolute;
-                top: 4rem;
+                top: 4.8rem;
                 left: 0;
                 width: 100%;
                 border-radius: 15px;
@@ -135,6 +136,11 @@
                 }
             }
 
+            .dropdown-list::-webkit-scrollbar {
+                background: transparent;
+                /* Chrome/Safari/Webkit */
+                width: 0px;
+            }
         }
 
         .searchGroup {
@@ -142,7 +148,7 @@
             height: 40px;
             flex-direction: column;
             overflow: hidden;
-
+            margin-top: 7px;
             width: 50%;
 
             .search-box {
@@ -311,7 +317,7 @@
                 background-color: var(--black);
                 box-shadow: var(--shadow);
                 cursor: pointer;
-
+                margin-top: 10px;
 
                 .dropdown-text {
                     display: flex;
@@ -325,7 +331,7 @@
 
                 .dropdown-list {
                     position: absolute;
-                    top: 4rem;
+                    top: 3.8rem;
                     left: 0;
                     width: 100%;
                     max-height: 300px;
@@ -533,6 +539,7 @@
                 background-color: var(--black);
                 box-shadow: var(--shadow);
                 cursor: pointer;
+                margin-top: 0px;
 
                 .dropdown-text {
                     display: flex;
@@ -547,7 +554,7 @@
 
                 .dropdown-list {
                     position: absolute;
-                    top: 4rem;
+                    top: 3.8rem;
                     left: 0;
                     width: 100%;
                     max-height: 300px;
@@ -578,6 +585,7 @@
                 overflow: hidden;
                 width: 51%;
                 text-align: left;
+                margin-top: 0px;
 
                 .search-box {
                     display: flex;

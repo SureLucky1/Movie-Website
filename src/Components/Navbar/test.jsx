@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './test.css';
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
@@ -100,7 +100,15 @@ function Dropdownn({ moviesGenres }) {
             setRotate('-180deg');
         }
     }, [show]);
-
+    const downRef = useRef();
+    const listRef = useRef();
+    
+    window.addEventListener("click", (e)=>{
+        if(e.target !== downRef.current && e.target !== listRef.current){
+    
+            setShow(false);
+        }
+      })
     return (
         <header className='open'>
         <div className="search-bar">
@@ -110,20 +118,20 @@ function Dropdownn({ moviesGenres }) {
             </NavbarBrand>
           </Link>
             <div className="dropdown" >
-                <div id="drop-text" className="dropdown-text" tabIndex="-1" onBlur={() => {setTimeout(() => {setShow(false)}, 0)}} onClick={() => {setShow(!show); setShoww(false);}} >
-                    <span  id="span">{text}</span>
+                <div id="drop-text" className="dropdown-text" ref={downRef} onClick={() => {setShow(!show); setShoww(false);}} >
+                    <span  id="span" >{text}</span>
                     <i id="icon" className="fa-solid fa-chevron-down" style={{ transform:`rotate(${rotate})`,transitionDuration: "0.3s"}}></i>
                 </div>
                 {show && (
-                    <ul id="list" className="dropdown-list">
-                        <li className="dropdown-list-item"onClick={() => {
+                    <ul id="list" className="dropdown-list" ref={listRef}>
+                        <li className="dropdown-list-item" onClick={() => {
                                 setText("Popular");
                                 setPlaceholder(`Search in Popular...`);}}>
                                 <Link
                             to={"movies/popular"}
                             style={{ textDecoration: "none", color: "#fff" }}
                           >
-                            <NavLink className="popular">Popular</NavLink>
+                            <NavLink className="popular" >Popular</NavLink>
                           </Link></li>
                         <li className="dropdown-list-item" onClick={() => {
                                 setText("Top Rated");
@@ -135,7 +143,7 @@ function Dropdownn({ moviesGenres }) {
                             <NavLink className="topRated">Top-rated</NavLink>
                           </Link></li>
                         {listItems.map((item, index) => (
-                            <li key={index} className="dropdown-list-item" onClick={() => {
+                            <li key={index} className="dropdown-list-item"onClick={() => {
                                 setText(item.name);
                                 if (item.name === 'Everything') {
                                     setPlaceholder('Search Anything...');
@@ -146,7 +154,7 @@ function Dropdownn({ moviesGenres }) {
                             to={`moviesGenres/${item.id}`}
                             style={{ textDecoration: "none", color: "#fff" }}
                           >
-                            <NavLink className="dropdown-item">{item.name}</NavLink></Link></li>
+                            <NavLink className="dropdown-item" >{item.name}</NavLink></Link></li>
                         ))}
                     </ul>
                 )}

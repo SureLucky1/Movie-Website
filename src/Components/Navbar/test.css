@@ -39,6 +39,7 @@
   padding: 0;
   border-radius: 10px;
   position: relative;
+  top: 5px;
   font-family: Helvetica;
   margin-left: 50px;
   color: gray;
@@ -48,7 +49,7 @@
   content: attr(data-spotlight);
   color: yellow;
   position: absolute;
-  top: 0px;
+  top: 5px;
   left: 0;
   -webkit-clip-path: ellipse(100px 100px at 0% 50%);
   clip-path: ellipse(100px 100px at 0% 50%);
@@ -76,6 +77,7 @@
   background-color: var(--black);
   box-shadow: var(--shadow);
   cursor: pointer;
+  margin-top: 18px;
 }
 .open .search-bar .dropdown .dropdown-text {
   display: flex;
@@ -91,7 +93,7 @@
 }
 .open .search-bar .dropdown .dropdown-list {
   position: absolute;
-  top: 4rem;
+  top: 4.8rem;
   left: 0;
   width: 100%;
   border-radius: 15px;
@@ -100,6 +102,7 @@
   background-color: black;
   transition: max-height 0.5s;
   overflow-x: hidden;
+  scrollbar-width: none;
 }
 .open .search-bar .dropdown .dropdown-list .dropdown-list-item {
   font-size: 20px;
@@ -119,11 +122,17 @@
   margin-left: 0.5rem;
   color: var(--yellow);
 }
+.open .search-bar .dropdown .dropdown-list::-webkit-scrollbar {
+  background: transparent;
+  /* Chrome/Safari/Webkit */
+  width: 0px;
+}
 .open .search-bar .searchGroup {
   display: flex;
   height: 40px;
   flex-direction: column;
   overflow: hidden;
+  margin-top: 7px;
   width: 50%;
 }
 .open .search-bar .searchGroup .search-box {
@@ -258,6 +267,7 @@
     background-color: var(--black);
     box-shadow: var(--shadow);
     cursor: pointer;
+    margin-top: 10px;
   }
   .open .search-bar .dropdown .dropdown-text {
     display: flex;
@@ -270,7 +280,7 @@
   }
   .open .search-bar .dropdown .dropdown-list {
     position: absolute;
-    top: 4rem;
+    top: 3.8rem;
     left: 0;
     width: 100%;
     max-height: 300px;
@@ -440,6 +450,7 @@
     background-color: var(--black);
     box-shadow: var(--shadow);
     cursor: pointer;
+    margin-top: 0px;
   }
   .open .search-bar .dropdown .dropdown-text {
     display: flex;
@@ -453,7 +464,7 @@
   }
   .open .search-bar .dropdown .dropdown-list {
     position: absolute;
-    top: 4rem;
+    top: 3.8rem;
     left: 0;
     width: 100%;
     max-height: 300px;
@@ -479,6 +490,7 @@
     overflow: hidden;
     width: 51%;
     text-align: left;
+    margin-top: 0px;
   }
   .open .search-bar .searchGroup .search-box {
     display: flex;

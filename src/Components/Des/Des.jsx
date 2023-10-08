@@ -51,10 +51,7 @@ const Description = () => {
         <style>
         {`
     .mcontent-big {
-      position: absolute;
-      display: flex;
-background-position-x: center;
-background-position-y: top;
+background-position: center;
       background-size: contain;
       background-image: url('https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path}');
         `}
