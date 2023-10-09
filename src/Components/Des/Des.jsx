@@ -1,28 +1,16 @@
 import React, { useState, useEffect} from "react";
 import "./Dess.css";
-import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Description = () => {
   const { movieId } = useParams();
   console.log(movieId);
-  const [overFlow, setOverFlow] = useState(null);
   const [movieDetails, setMovieDetails] = useState({});
-  console.log(movieDetails);
-  const location = useLocation();   
+  console.log(movieDetails);  
   const [movieTrailer, setmovieTrailer] = useState({});
   const rate = Math.floor(`${movieDetails.vote_average}` * 10) / 10;
   const navigate = useNavigate();
-  const ee = location.pathname;
-  // useEffect(() => {
-  //   if(ee == `/movie/${movieId}`){
-  //     setOverFlow("visible");
-      
-  //   }else{setOverFlow("hidden");
-
-  //   }
-
-  // });
   useEffect(() => {
     axios
       .get(

@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Routes, Route, useLocation, useParams } from "react-router-dom";
+import { Routes, Route, useLocation} from "react-router-dom";
 import Home from "./Components/Home";
 import Description from "./Components/Des/Des";
 import axios from "axios";

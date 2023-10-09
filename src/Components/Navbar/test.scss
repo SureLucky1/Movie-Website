@@ -49,9 +49,9 @@
 
             &::after {
                 content: attr(data-spotlight);
-                color: yellow;
+                color: rgb(53, 213, 9);
                 position: absolute;
-                top: 5px;
+                top: -4px;
                 left: 0;
                 -webkit-clip-path: ellipse(100px 100px at 0% 50%);
                 clip-path: ellipse(100px 100px at 0% 50%);
@@ -138,7 +138,6 @@
 
             .dropdown-list::-webkit-scrollbar {
                 background: transparent;
-                /* Chrome/Safari/Webkit */
                 width: 0px;
             }
         }
@@ -185,7 +184,6 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    // border: 2px solid rgb(15, 190, 239);
                     border-radius: 50%;
                 }
 
@@ -501,7 +499,7 @@
                         content: attr(data-spotlight);
                         color: rgb(53, 213, 9);
                         position: absolute;
-                        top: 0px;
+                        top: -4px;
                         left: 0;
                         -webkit-clip-path: ellipse(100px 100px at 0% 50%);
                         clip-path: ellipse(100px 100px at 0% 50%);

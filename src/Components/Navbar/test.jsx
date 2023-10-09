@@ -1,26 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './test.css';
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
     NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-  
-    Dropdown,
-    Input,
-    Button,
-    NavbarText,
+    NavLink
   } from "reactstrap";
-function Dropdownn({ moviesGenres }) {
+function Dropdownn({ }) {
     const [showw, setShoww] = useState(false);
     const [show, setShow] = useState(false);
     const [rotate, setRotate] = useState('0deg');
@@ -48,18 +34,6 @@ function Dropdownn({ moviesGenres }) {
         )
         .then((response) => {
           const data = response.data;
-          {/*console.log(response);*/}
-          setMovies(data.results);
-        });
-    };
-    const popularMovie = () => {
-      axios
-        .get(
-          "https://api.themoviedb.org/3/movie/popular?api_key=2bcdb3df9702bc31542cffaec406fda7&language=en-US&page=1"
-        )
-        .then((response) => {
-          const data = response.data;
-          {/*console.log(response);*/}
           setMovies(data.results);
         });
     };
@@ -70,7 +44,6 @@ function Dropdownn({ moviesGenres }) {
           "https://api.themoviedb.org/3/genre/movie/list?api_key=6a3a9e9a61085d657b30d36d1c7b5ba7"
         )
         .then((res) => {
-          {/*console.log("genres", res.data.genres);*/}
           setMoviesGenress(res.data.genres);
         });
     };
@@ -172,7 +145,6 @@ function Dropdownn({ moviesGenres }) {
                       }
                       setMovies(movies.filter(f => f.title.toLowerCase().includes(e.target.value)))
                     }}placeholder={placeholder} onBlur={() => {setTimeout(() => {setShoww(false)}, 0)}}/>
-                <i className="fa-solid fa-magnifying-glass"></i>
             </div>
              {showw === true &&<div className="bg-white shadow border">
             <div>

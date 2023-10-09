@@ -3,7 +3,8 @@ import "./containerr.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Container({ posts }) {
+
+function Container() {
   const [topRated, setTopRated] = useState([]); 
   const [upComing, setUpComing] = useState([]); 
   const [nowPlaying, setNowPlaying] = useState([]); 
@@ -199,56 +200,56 @@ function Container({ posts }) {
                   {post.vote_average >= 2 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 4 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 6 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 8 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 10 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.jpg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
@@ -307,56 +308,56 @@ function Container({ posts }) {
                   {post.vote_average >= 2 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 4 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 6 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 8 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 10 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
@@ -420,56 +421,56 @@ function Container({ posts }) {
                   {post.vote_average >= 2 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 4 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 6 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 8 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 10 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
@@ -557,56 +558,56 @@ function Container({ posts }) {
                   {post.vote_average >= 2 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 4 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 6 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 8 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average >= 10 ? (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"
                     />
                   ) : (
                     <img
                       width="20px"
-                      src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.png"
                     />
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}

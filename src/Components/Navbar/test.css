@@ -47,9 +47,9 @@
 }
 .open .search-bar .NavbarBrand::after {
   content: attr(data-spotlight);
-  color: yellow;
+  color: rgb(53, 213, 9);
   position: absolute;
-  top: 5px;
+  top: -4px;
   left: 0;
   -webkit-clip-path: ellipse(100px 100px at 0% 50%);
   clip-path: ellipse(100px 100px at 0% 50%);
@@ -102,7 +102,6 @@
   background-color: black;
   transition: max-height 0.5s;
   overflow-x: hidden;
-  scrollbar-width: none;
 }
 .open .search-bar .dropdown .dropdown-list .dropdown-list-item {
   font-size: 20px;
@@ -124,7 +123,6 @@
 }
 .open .search-bar .dropdown .dropdown-list::-webkit-scrollbar {
   background: transparent;
-  /* Chrome/Safari/Webkit */
   width: 0px;
 }
 .open .search-bar .searchGroup {
@@ -421,7 +419,7 @@
     content: attr(data-spotlight);
     color: rgb(53, 213, 9);
     position: absolute;
-    top: 0px;
+    top: -4px;
     left: 0;
     -webkit-clip-path: ellipse(100px 100px at 0% 50%);
     clip-path: ellipse(100px 100px at 0% 50%);
