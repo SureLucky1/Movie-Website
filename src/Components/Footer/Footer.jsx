@@ -7,6 +7,9 @@ function Footer() {
             <div className='flex-item'>
                 Coded by Calvin, Rex, Michael and Dickson
             </div>
+            <div className='flex-item'>
+                Finally revised and updated by Dickson
+            </div>
 
         </footer>
     ); 
