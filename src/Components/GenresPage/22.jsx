@@ -15,6 +15,7 @@ const GenresPage = ({ moviesGenres }) => {
   const [genreMovies, setGenreMovies] = useState(Array(20).fill({}));
   console.log(genreMovies);
   const [isLoading, setIsLoading] = useState(true);
+  const [cost, setCost] = useState(null)
   const [pageNum, setPageNum] = useState(1);
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) || []
@@ -25,7 +26,21 @@ const GenresPage = ({ moviesGenres }) => {
     localStorage.setItem("favorite", JSON.stringify(favorite));
   }, [favorite]);
 
+  useEffect(() => {        
 
+          genreMovies.forEach(each =>{
+      console.log(each)
+          if(each.vote_average > 8.2){
+            setCost(Dollar.top_rated);
+  }else{
+    setCost(Dollar.general);
+  }
+    })
+      
+
+
+
+  }, [Dollar, genreMovies]);
 
   useEffect(() => {
     axios
@@ -59,14 +74,7 @@ const dispatch = useDispatch();
       <div>
         <div className="flex-parent">
           {genreMovies.map((post) =>{
-                     let cost;
-                     if (post.vote_average >= 8.2) {
-                       cost = Dollar.top_rated;
-                     } else if (post.popularity >= 1400) {
-                       cost = Dollar.popular;
-                     } else {
-                       cost = Dollar.general;
-                     }
+            const cost = post.vote_average > 8.2 ? Dollar.top_rated : Dollar.general;
           return (            isLoading ? (
               <div className="moviebox">
                 <SkeletonTheme baseColor="#202020" highlightColor="#444">

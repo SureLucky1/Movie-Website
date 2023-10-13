@@ -10,23 +10,46 @@ import { addPrice } from '../Redux/priceSlice'
 import context from "../../index";  
 
 const GenresPage = ({ moviesGenres }) => {
-  const Dollar = useContext(context);
+  //const Dollar = useContext(context);
   const { genres } = useParams();
   const [genreMovies, setGenreMovies] = useState(Array(20).fill({}));
   console.log(genreMovies);
   const [isLoading, setIsLoading] = useState(true);
+  const [cost, setCost] = useState(null)
   const [pageNum, setPageNum] = useState(1);
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) || []
   );
-
+  const Dollar = {
+    popular: 70,
+    top_rated: 60,
+    general: 450
+  };
 
   useEffect(() => {
     localStorage.setItem("favorite", JSON.stringify(favorite));
   }, [favorite]);
 
+  useEffect(() => {        
+
+          genreMovies.forEach(each =>{
+      console.log(each)
+          if(each.vote_average > 8.2){
+            setCost(Dollar.top_rated);
+  }else{
+    setCost(Dollar.general);
+  }
+    })
+      
 
 
+
+  }, [Dollar, genreMovies]);
+  // onLoad={()=>{if(post.vote_average > 8.2){
+  //   setCost(Dollar.top_rated);
+  // }else{
+  //   setCost(Dollar.general);
+  // }}}
   useEffect(() => {
     axios
       .get(
@@ -58,16 +81,8 @@ const dispatch = useDispatch();
       <h1 className="slider_title">{moviesGenres.name}</h1>
       <div>
         <div className="flex-parent">
-          {genreMovies.map((post) =>{
-                     let cost;
-                     if (post.vote_average >= 8.2) {
-                       cost = Dollar.top_rated;
-                     } else if (post.popularity >= 1400) {
-                       cost = Dollar.popular;
-                     } else {
-                       cost = Dollar.general;
-                     }
-          return (            isLoading ? (
+          {genreMovies.map((post) =>
+            isLoading ? (
               <div className="moviebox">
                 <SkeletonTheme baseColor="#202020" highlightColor="#444">
                   <Skeleton duration={2} height={300} />
@@ -191,9 +206,8 @@ const dispatch = useDispatch();
                   </button>
                 </Link>
               </div>
-            ))
-
-                    })}
+            )
+          )}
         </div>
       </div>
       <div className="prev-next-parent">

@@ -1,14 +1,18 @@
 import "./App.css";
-
+import { Provider } from "react-redux";
+import { MyContextProvider } from "./index";
+import store from "./Components/Redux/store";
 import { Routes, Route, useLocation} from "react-router-dom";
+
 import Home from "./Components/Home";
 import Description from "./Components/Des/Des";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import MoviePage from "./Components/MoviePage/MoviePage";
 import GenresPage from "./Components/GenresPage/GenresPage";
 import TopUp from "./Components/TopUp/TopUp"; 
 import Dropdownn from "./Components/Navbar/test"
+import Chectout from "./Components/Chectout/Chectout";
 function App() {
   const location = useLocation();   
   const [overFlow, setOverFlow] = useState(null);
@@ -51,9 +55,20 @@ function App() {
     }
 
   });
+  const Dollar = {
+    popular: 110,
+    top_rated: 70,
+    general: 40
+  };
+  /*
+  const Dollar = [
+{popular: 70},
+{topRate: 60},
+{general: 40}
+  ];*/
   return (
-    <div>
-
+<Provider store={store}>
+<MyContextProvider value={ Dollar }>
       <Dropdownn moviesGenres={moviesGenres} />
     <main className="App">
       <style>
@@ -72,10 +87,12 @@ function App() {
           path="/moviesGenres/:genres"
           element={<GenresPage moviesGenres={moviesGenres} />}
         />
+        <Route path="/checkout" element={<Chectout />}></Route>
       </Routes>
       <TopUp />
     </main>
-    </div>
+    </MyContextProvider>
+    </Provider >
   );
 }
 

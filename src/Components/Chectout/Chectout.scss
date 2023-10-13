@@ -1,0 +1,30 @@
+@mixin row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+}
+
+.cart {
+    height: 100%;
+    background-color: black;
+
+    .itemgroup {
+        @include row;
+
+        .d-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 10px 15px;
+
+            .c-image {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }
+
+}

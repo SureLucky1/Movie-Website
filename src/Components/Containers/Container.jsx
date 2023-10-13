@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./containerr.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import {useDispatch} from 'react-redux';
+import { addtoCart } from '../Redux/cartSlice'
+import { addPrice } from '../Redux/priceSlice'
+import context from "../../index";  
 
 function Container() {
+  const Dollar = useContext(context);
+  const dispatch = useDispatch();
   const [topRated, setTopRated] = useState([]); 
   const [upComing, setUpComing] = useState([]); 
   const [nowPlaying, setNowPlaying] = useState([]); 
@@ -184,7 +189,17 @@ function Container() {
       <h1 className="slider_title">Today's Trending</h1>
       <div>
         <div className="flex-parent">
-          {trending.map((post) => (
+          {trending.map((post) => {
+                     let cost;
+                     if (post.vote_average >= 8.2) {
+                       cost = Dollar.top_rated;
+                     } else if (post.popularity >= 1400) {
+                       cost = Dollar.popular;
+                     } else {
+                       cost = Dollar.general;
+                     }
+          return ( (
+            
             <div className="moviebox">
             <Link to={`/movie/${post.id}`} style={{ textDecoration: "none" }}>
               <a
@@ -254,8 +269,16 @@ function Container() {
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
                 </div>
+
               </a>
-            </Link>
+            </Link>                
+            <h1>$<span>{cost}</span></h1>
+                <button className="btn btn-warning" onClick={()=>{
+    dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
+    dispatch(addPrice({price:"40"}));
+}}>
+    Add to cart
+</button>
             <Link>
               <button className='heart_btn' onClick={() => heartFunction(post.id)}>
                   {favorite.includes(post.id) ? 
@@ -270,7 +293,7 @@ function Container() {
               </button>
             </Link>
             </div>
-          ))}
+          )  )})}
         </div>
       </div>
       <div className='prev-next-parent'>
@@ -292,7 +315,16 @@ function Container() {
       </Link>
       <section>
         <div className="flex-parent">
-          {nowPlaying.map((post) => (
+          {nowPlaying.map((post) => {
+                     let cost;
+                     if (post.vote_average >= 8.2) {
+                       cost = Dollar.top_rated;
+                     } else if (post.popularity >= 1400) {
+                       cost = Dollar.popular;
+                     } else {
+                       cost = Dollar.general;
+                     }
+          return (          (
             <div className="moviebox">
             <Link to={`/movie/${post.id}`} style={{ textDecoration: "none" }}>
               <a
@@ -362,8 +394,16 @@ function Container() {
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
                 </div>
+
               </a>
             </Link>
+                            <h1>$<span>{cost}</span></h1>
+                <button className="btn btn-warning" onClick={()=>{
+    dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
+    dispatch(addPrice({price:"40"}));
+}}>
+    Add to cart
+</button>
             <Link>
               <button className='heart_btn' onClick={() => heartFunction(post.id)}>
                   {favorite.includes(post.id) ? 
@@ -378,7 +418,8 @@ function Container() {
               </button>
             </Link>
             </div>
-          ))}
+          ) )}
+)}
         </div>
       </section>
       <div className='prev-next-parent'>
@@ -400,7 +441,16 @@ function Container() {
       </Link>
       <section>
         <div className="flex-parent">
-          {upComing.map((post) => (
+          {upComing.map((post) => {
+                     let cost;
+                     if (post.vote_average >= 8.2) {
+                       cost = Dollar.top_rated;
+                     } else if (post.popularity >= 1400) {
+                       cost = Dollar.popular;
+                     } else {
+                       cost = Dollar.general;
+                     }
+          return (               (
             <div className="moviebox">
             <Link to={`/movie/${post.id}`} style={{ textDecoration: "none" }}>
               <a
@@ -476,7 +526,15 @@ function Container() {
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
                 </div>
               </a>
+
             </Link>
+                          <h1>$<span>{cost}</span></h1>
+                <button className="btn btn-warning" onClick={()=>{
+    dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
+    dispatch(addPrice({price:"40"}));
+}}>
+    Add to cart
+</button>
             <Link>
               <button className='heart_btn' onClick={() => heartFunction(post.id)}>
                   {favorite.includes(post.id) ? 
@@ -491,7 +549,8 @@ function Container() {
               </button>
             </Link>
             </div>
-          ))}
+          )     )}
+)}
         </div>
       </section>
       <div className='prev-next-parent'>
@@ -537,7 +596,17 @@ function Container() {
       
       <section>
         <div className="flex-parent">
-          {search.map((post) => (
+          {search.map((post) => 
+          {
+            let cost;
+            if (post.vote_average >= 8.2) {
+              cost = Dollar.top_rated;
+            } else if (post.popularity >= 1400) {
+              cost = Dollar.popular;
+            } else {
+              cost = Dollar.general;
+            }
+ return (      (
             <div className="moviebox">
             <Link to={`/movie/${post.id}`} style={{ textDecoration: "none" }}>
               <a
@@ -612,12 +681,20 @@ function Container() {
                   )}
                   {post.vote_average !== 0 && ` (${Math.floor(post.vote_average * 10) / 10})`}
                 </div>
+
               </a>
             </Link>
+                            <h1>$<span>{cost}</span></h1>
+                <button className="btn btn-warning" onClick={()=>{
+    dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
+    dispatch(addPrice({price:"40"}));
+}}>
+    Add to cart
+</button>
             <Link>
               <button className='heart_btn' onClick={() => heartFunction(post.id)}>
                   {favorite.includes(post.id) ? 
-                  <img
+                  <img尸
                     className="heart_img"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Love_Heart_SVG.svg/968px-Love_Heart_SVG.svg.png"
                   />
@@ -626,9 +703,11 @@ function Container() {
                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Love_Heart_SVG.svg/968px-Love_Heart_SVG.svg.png"
                  />}
               </button>
+              
             </Link>
             </div>
-          ))}
+          )     )}
+)}
         </div>
       </section>
       <div className='prev-next-parent'>

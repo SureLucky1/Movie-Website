@@ -168,7 +168,9 @@ function Dropdownn({ }) {
         
                 </div>}
         </div>
+        <Link to="/checkout"><h4>Cart<small> </small></h4></Link>
         </div>
+
         </header>
     );
 }

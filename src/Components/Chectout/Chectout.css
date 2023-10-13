@@ -1,0 +1,21 @@
+.cart {
+  height: 100%;
+  background-color: black;
+}
+.cart .itemgroup {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.cart .itemgroup .d-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px 15px;
+}
+.cart .itemgroup .d-flex .c-image {
+  width: 250px;
+  height: 250px;
+}/*# sourceMappingURL=Chectout.css.map */
