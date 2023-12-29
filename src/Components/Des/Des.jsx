@@ -1,12 +1,18 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import "./Dess.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-
+import {useDispatch} from 'react-redux';
+import { addtoCart } from '../Redux/cartSlice'
+import { addPrice } from '../Redux/priceSlice'
+import context from "../../index";  
 const Description = () => {
+  const Dollar = useContext(context);
+  const dispatch = useDispatch()
   const { movieId } = useParams();
   console.log(movieId);
   const [movieDetails, setMovieDetails] = useState({});
+  const [pricee, setPrice] = useState(null);
   console.log(movieDetails);  
   const [movieTrailer, setmovieTrailer] = useState({});
   const rate = Math.floor(`${movieDetails.vote_average}` * 10) / 10;
@@ -31,6 +37,17 @@ const Description = () => {
         setmovieTrailer(res.data);
       });
   }, [movieId]);
+  useEffect(() => {
+
+                     if (movieDetails.vote_average >= 8.2) {
+                      setPrice(Dollar.top_rated);
+                     } else if (movieDetails.popularity >= 1400) {
+                      console.log(movieDetails.popularity)
+                      setPrice(Dollar.popular);
+                     } else {
+                      setPrice(Dollar.general);
+                     }
+  }, [movieDetails]);
   console.log("movieTailer", movieTrailer);
 
   return (
@@ -56,6 +73,14 @@ background-position: center;
           <div className="filmAndRate">
             <p class="des-title">{movieDetails.title}</p>
             <span id="rate">{rate}</span>
+
+<h1>$<span>{pricee}</span></h1>
+<button className="btn btn-warning" onClick={()=>{
+    dispatch(addtoCart({title: movieDetails.original_title, image: `https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`, price: pricee}));
+    dispatch(addPrice({price: pricee}));
+}}>
+    Add to cart
+</button>
           </div>
           <span id="releaseDate">Release Date:{movieDetails.release_date}</span>
           <div class="des-genres">

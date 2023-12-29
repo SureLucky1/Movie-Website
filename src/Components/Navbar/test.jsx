@@ -144,12 +144,12 @@ function Dropdownn({ }) {
                         setShoww(false)
                       }
                       setMovies(movies.filter(f => f.title.toLowerCase().includes(e.target.value)))
-                    }}placeholder={placeholder} onBlur={() => {setTimeout(() => {setShoww(false)}, 0)}}/>
+                    }}placeholder={placeholder} />
             </div>
              {showw === true &&<div className="bg-white shadow border">
             <div>
             {movies.map((d, i) => (
-                        <div className="videoSet"key={i}>
+                        <div className="videoSet"key={i} onBlur={() => {setTimeout(() => {setShoww(false)}, 0)}}>
                                           <Link
                   to={`/movie/${d.id}`}
                   style={{ textDecoration: "none" }}

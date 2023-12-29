@@ -11,8 +11,11 @@ const priceSlice = createSlice({
       subtractPrice: (state, action) => {
         state.total -= Number.parseFloat(action.payload.price);
       },
+      clearTotal: (state) => {
+        state.total = 0;
+      },
     },
   });
 
   export default priceSlice.reducer;
-export const {addPrice, subtractPrice} = priceSlice.actions;
+export const {addPrice, subtractPrice, clearTotal} = priceSlice.actions;
