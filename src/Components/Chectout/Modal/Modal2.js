@@ -39,7 +39,16 @@ const Modal = ({showModal, setShowModal, setOverflow, setIndex, setDisplay}) => 
     },
     [setShowModal, showModal]
   );
-
+const check = ()=>{
+ if(!document.querySelector('.creditChoice1').checked && !document.querySelector('.creditChoice2').checked && !document.querySelector('.creditChoice3').checked){
+  alert("Please select a payment method.");
+}else if(document.querySelector('.cardNumber').value === ""){
+  alert("Please enter your credit card number.")
+}else{
+  dispatch(clearCart());
+  dispatch(clearTotal());
+}   
+}
   useEffect(
     () => {
       document.addEventListener('keydown', keyPress);
@@ -58,26 +67,23 @@ const Modal = ({showModal, setShowModal, setOverflow, setIndex, setDisplay}) => 
 <form>
   <label htmlFor="fname">Payment Method</label><br />
   <div>
-  <input type="radio" id="fname" name="fname" /><br />
-  <label htmlFor="fname">Paypal</label><br />
+  <input className="creditChoice1" type="radio" id="fname" name="fname" /><br />
+  <label  htmlFor="fname">Paypal</label><br />
   </div>
   <div>
-  <input type="radio" id="fname" name="fname" /><br />
+  <input className="creditChoice2" type="radio" id="fname" name="fname" /><br />
   <label htmlFor="fname">Master Card</label><br />
   </div>
   <div>
-  <input type="radio" id="fname" name="fname" /><br />
+  <input className="creditChoice3" type="radio" id="fname" name="fname" /><br />
   <label htmlFor="fname">VISA Card</label><br />
   </div>
-  <label htmlFor="lname">Card Numbers</label><br />
-  <input type="text" id="lname" name="lname" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+  <label>Card Numbers</label><br />
+  <input className="cardNumber" type="text" id="lname" placeholder="e.g. XXXX-XXXX-XXXX-XXXX" />
 
   <h2>Total Price: ${Total}</h2>
 </form>
-<button className="btn btn-success" onClick={()=>{
-    dispatch(clearCart());
-    dispatch(clearTotal());
-}}>
+<button className="btn btn-success" onClick={()=>{check();}}>
     Checkout
 </button>
   

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext} from "react";
 import "./Dess.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { addtoCart } from '../Redux/cartSlice'
 import { addPrice } from '../Redux/priceSlice'
 import context from "../../index";  
@@ -49,7 +49,8 @@ const Description = () => {
                      }
   }, [movieDetails]);
   console.log("movieTailer", movieTrailer);
-
+  const cartItems = useSelector(state => state.cart.cart);
+  
   return (
     <section className="backdrop" >
                              
@@ -75,10 +76,10 @@ background-position: center;
             <span id="rate">{rate}</span>
 
 <h1>$<span>{pricee}</span></h1>
-<button className="btn btn-warning" onClick={()=>{
-    dispatch(addtoCart({title: movieDetails.original_title, image: `https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`, price: pricee}));
-    dispatch(addPrice({price: pricee}));
-}}>
+<button className="btn btn-warning" onClick={() => {
+  dispatch(addtoCart({title: movieDetails.original_title, image: `https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`, price: pricee}));
+  dispatch(addPrice({title: movieDetails.original_title, price: pricee}));
+  }}>
     Add to cart
 </button>
           </div>

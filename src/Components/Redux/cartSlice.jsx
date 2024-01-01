@@ -1,5 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {useDispatch} from 'react-redux';
+import { addPrice } from '../Redux/priceSlice'
+import { useEffect } from "react";
 
+// useEffect(() =>{
+// const use = useDispatch();
+// use(addPrice())
+// })
 // 創建一個名為 "cart" 的切片
 const cartSlice = createSlice({
   // 切片的名稱
@@ -11,8 +18,9 @@ const cartSlice = createSlice({
     // 添加項目到購物車
     addtoCart: (state, action) => {
       // 如果購物車中已經有該項目，則將新的項目添加到該項目的陣列中
-      if (state.cart[action.payload.title]) {
+      if (state.cart[!action.payload.title]) {
         state.cart[action.payload.title].push(action.payload);
+        // ss()
       } else {
         // 如果購物車中沒有該項目，則創建一個新的陣列並將該項目添加到其中
         state.cart[action.payload.title] = [action.payload];

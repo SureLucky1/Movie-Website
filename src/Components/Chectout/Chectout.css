@@ -1,12 +1,63 @@
 .cart {
   height: 100%;
-  background-color: black;
+  background-color: white;
+  margin-top: 0px;
+  color: black;
+}
+.cart .tablegroup {
+  margin: 0px 20px;
+}
+.cart .tablegroup tr {
+  width: 100%;
+}
+.cart .tablegroup tr th {
+  font-size: 25px;
+}
+.cart .tablegroup tr td {
+  font-size: 25px;
+  width: 1/4;
+  height: 300px;
+}
+.cart .tablegroup tr td img {
+  width: 230px;
+  height: 300px;
+  margin: 7px 0px;
+}
+.cart .tablegroup tr td button {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+}
+.cart .tablegroup .listt {
+  width: 100%;
+}
+.cart .tablegroup .listt td {
+  height: 90px;
+}
+.cart .tablegroup .listt .pay {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cart .tablegroup .listt .pay div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.cart .tablegroup .listt .pay div h2 {
+  margin: 0px 15px;
+}
+.cart .tablegroup .listt .pay div button {
+  margin-top: 10px;
+  font-size: 15px;
 }
 .cart .itemgroup {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  display: none;
 }
 .cart .itemgroup .d-flex {
   display: flex;
@@ -18,4 +69,79 @@
 .cart .itemgroup .d-flex .c-image {
   width: 250px;
   height: 250px;
+}
+
+@media screen and (max-width: 650px) {
+  .cart {
+    height: 100%;
+    background-color: white;
+    margin-top: 0px;
+    color: black;
+  }
+  .cart .tablegroup {
+    margin: 0px 20px;
+    display: none;
+  }
+  .cart .tablegroup tr {
+    width: 100%;
+  }
+  .cart .tablegroup tr th {
+    font-size: 25px;
+  }
+  .cart .tablegroup tr td {
+    font-size: 25px;
+    width: 1/4;
+    height: 300px;
+  }
+  .cart .tablegroup tr td img {
+    width: 230px;
+    height: 300px;
+    margin: 7px 0px;
+  }
+  .cart .tablegroup tr td button {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .cart .tablegroup .listt {
+    width: 100%;
+  }
+  .cart .tablegroup .listt td {
+    height: 90px;
+  }
+  .cart .tablegroup .listt .pay {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .cart .tablegroup .listt .pay div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .cart .tablegroup .listt .pay div h2 {
+    margin: 0px 15px;
+  }
+  .cart .tablegroup .listt .pay div button {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .cart .itemgroup {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .cart .itemgroup .d-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px 15px;
+  }
+  .cart .itemgroup .d-flex .c-image {
+    width: 220px;
+    height: 250px;
+  }
 }/*# sourceMappingURL=Chectout.css.map */

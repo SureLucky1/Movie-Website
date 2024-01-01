@@ -20,13 +20,21 @@
 .modal form div {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: center;
   flex-direction: row;
+}
+.modal form div label {
+  width: auto;
+}
+.modal form div input {
+  width: 30px;
+  height: 20px;
 }
 .modal form input {
   width: 300px;
   height: 20px;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 600px) {

@@ -33,8 +33,9 @@
   justify-content: space-between;
   background-color: var(--white);
   width: 100%;
+  padding: 0px 20px;
 }
-.open .search-bar .NavbarBrand {
+.open .search-bar .theme .NavbarBrand {
   font-size: 23px;
   padding: 0;
   border-radius: 10px;
@@ -45,7 +46,7 @@
   color: gray;
   letter-spacing: -0.3rem;
 }
-.open .search-bar .NavbarBrand::after {
+.open .search-bar .theme .NavbarBrand::after {
   content: attr(data-spotlight);
   color: rgb(53, 213, 9);
   position: absolute;
@@ -54,6 +55,13 @@
   -webkit-clip-path: ellipse(100px 100px at 0% 50%);
   clip-path: ellipse(100px 100px at 0% 50%);
   animation: spotlight 5s infinite;
+}
+.open .search-bar .theme .cartIcon1 {
+  display: none;
+  font-size: 15px;
+  margin-top: 20px;
+  color: black;
+  text-decoration: none;
 }
 @keyframes spotlight {
   0% {
@@ -137,12 +145,10 @@
   display: flex;
   align-items: center;
   padding-right: 1rem;
-  width: 100%;
   color: var(--black);
   height: 100px;
 }
 .open .search-bar .searchGroup .search-box input {
-  width: 100%;
   font-size: 3rem;
   font-weight: 500;
   color: var(--black);
@@ -204,6 +210,17 @@
 .open .search-bar .searchGroup .bg-white div .videoSet .link div h1 {
   font-size: 18px;
 }
+.open .search-bar .cartIcon2 {
+  display: flex;
+  font-size: 25px;
+  margin-top: 20px;
+  color: black;
+  text-decoration: none;
+}
+.open .search-bar .cartIcon2 .icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
 
 @media screen and (max-width: 800px) {
   .open {
@@ -229,7 +246,7 @@
     border-radius: 10px;
     position: relative;
     font-family: Helvetica;
-    margin-left: 15px;
+    right: 50px;
     color: gray;
     letter-spacing: -0.3rem;
   }
@@ -266,12 +283,13 @@
     box-shadow: var(--shadow);
     cursor: pointer;
     margin-top: 10px;
+    right: 30px;
   }
   .open .search-bar .dropdown .dropdown-text {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--white);
     padding: 1rem 1.5rem;
@@ -309,19 +327,19 @@
     height: 40px;
     flex-direction: column;
     overflow: hidden;
-    width: 43%;
+    width: 50%;
+    position: relative;
+    right: 30px;
   }
   .open .search-bar .searchGroup .search-box {
     display: flex;
     align-items: center;
     padding-right: 1rem;
-    width: 100%;
     color: var(--black);
     height: 100px;
   }
   .open .search-bar .searchGroup .search-box input {
     padding: 0.5rem;
-    width: 100%;
     font-size: 1.8rem;
     font-weight: 500;
     color: var(--black);
@@ -329,12 +347,12 @@
     outline: 0;
   }
   .open .search-bar .searchGroup .search-box input::-moz-placeholder {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--black);
   }
   .open .search-bar .searchGroup .search-box input::placeholder {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--black);
   }
@@ -377,6 +395,201 @@
   .open .search-bar .searchGroup .bg-white div .videoSet .link div h1 {
     font-size: 15px;
   }
+  .open .search-bar h4 {
+    font-size: 15px;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .open {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: var(--blue);
+    width: 100%;
+    z-index: 99;
+  }
+  .open .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+  }
+  .open .search-bar .NavbarBrand {
+    font-size: 16px;
+    padding: 0;
+    border-radius: 10px;
+    position: relative;
+    font-family: Helvetica;
+    right: 50px;
+    color: gray;
+    letter-spacing: -0.3rem;
+  }
+  .open .search-bar .NavbarBrand::after {
+    content: attr(data-spotlight);
+    color: rgb(53, 213, 9);
+    position: absolute;
+    top: 0px;
+    left: 0;
+    -webkit-clip-path: ellipse(100px 100px at 0% 50%);
+    clip-path: ellipse(100px 100px at 0% 50%);
+    animation: spotlight 5s infinite;
+  }
+  @keyframes spotlight {
+    0% {
+      -webkit-clip-path: ellipse(50px 50px at 50% 0%);
+      clip-path: ellipse(28px 28px at 0% 50%);
+    }
+    50% {
+      -webkit-clip-path: ellipse(100px 100px at 100% 100%);
+      clip-path: ellipse(28px 28px at 100% 50%);
+    }
+    100% {
+      -webkit-clip-path: ellipse(100px 100px at 0% 50%);
+      clip-path: ellipse(28px 28px at 0% 50%);
+    }
+  }
+  .open .search-bar .dropdown {
+    position: relative;
+    width: 35%;
+    border-radius: 50px;
+    border: 1px solid var(--white);
+    background-color: var(--black);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    margin-top: 10px;
+    right: 30px;
+  }
+  .open .search-bar .dropdown .dropdown-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--white);
+    padding: 1rem 1.5rem;
+  }
+  .open .search-bar .dropdown .dropdown-list {
+    position: absolute;
+    top: 3.8rem;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    background-color: black;
+    transition: max-height 0.5s;
+  }
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1rem 0 1rem 1.5rem;
+    cursor: pointer;
+    transition: margin-left 0.2s ease, color 0.2s ease;
+  }
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item .dropdown-item,
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item .popular,
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item .topRated {
+    font-size: 1.4rem;
+  }
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item .dropdown-item:hover,
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item .popular:hover,
+  .open .search-bar .dropdown .dropdown-list .dropdown-list-item .topRated:hover {
+    padding-left: 0.5rem;
+    color: var(--yellow);
+  }
+  .open .search-bar .searchGroup {
+    display: flex;
+    height: 40px;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    right: 30px;
+    margin-left: 5px;
+  }
+  .open .search-bar .searchGroup .search-box {
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+    width: 100%;
+    color: var(--black);
+    height: 100px;
+  }
+  .open .search-bar .searchGroup .search-box input {
+    padding: 0;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--black);
+    border: 0;
+    outline: 0;
+  }
+  .open .search-bar .searchGroup .search-box input::-moz-placeholder {
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: 100%;
+    color: var(--black);
+  }
+  .open .search-bar .searchGroup .search-box input::placeholder {
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: 100%;
+    color: var(--black);
+  }
+  .open .search-bar .searchGroup .search-box i {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  .open .search-bar .searchGroup .bg-white {
+    height: 280px;
+    display: block;
+    overflow-y: scroll;
+    width: 90%;
+    position: absolute;
+    top: 40px;
+    background-color: rgb(249, 249, 249);
+    padding: 5px 15px;
+    left: 3.5%;
+  }
+  .open .search-bar .searchGroup .bg-white div .videoSet {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+  .open .search-bar .searchGroup .bg-white div .videoSet .link {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .open .search-bar .searchGroup .bg-white div .videoSet .link img {
+    width: 70px;
+    height: 70px;
+  }
+  .open .search-bar .searchGroup .bg-white div .videoSet .link div {
+    width: 70%;
+    color: #0d0d0d;
+    margin-left: 15px;
+  }
+  .open .search-bar .searchGroup .bg-white div .videoSet .link div h1 {
+    font-size: 15px;
+  }
+  .open .search-bar .cartIcon2 {
+    font-size: 15px;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+  }
+  .open .search-bar .cartIcon2 .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
 }
 @media screen and (max-width: 450px) {
   .open {
@@ -386,7 +599,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 90px;
     background-color: var(--blue);
     width: 100%;
     z-index: 99;
@@ -404,6 +617,10 @@
   .open .search-bar .theme {
     width: 100%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .open .search-bar .theme .NavbarBrand {
     font-size: 20px;
@@ -414,16 +631,24 @@
     margin-left: 15px;
     color: gray;
     letter-spacing: -0.3rem;
+    top: 2px;
   }
   .open .search-bar .theme .NavbarBrand::after {
     content: attr(data-spotlight);
     color: rgb(53, 213, 9);
     position: absolute;
-    top: -4px;
+    top: 0px;
     left: 0;
     -webkit-clip-path: ellipse(100px 100px at 0% 50%);
     clip-path: ellipse(100px 100px at 0% 50%);
     animation: spotlight 5s infinite;
+  }
+  .open .search-bar .theme .cartIcon1 {
+    display: flex;
+    font-size: 15px;
+    margin-top: 0px;
+    color: black;
+    text-decoration: none;
   }
   @keyframes spotlight {
     0% {
@@ -449,6 +674,7 @@
     box-shadow: var(--shadow);
     cursor: pointer;
     margin-top: 0px;
+    margin-left: 15px;
   }
   .open .search-bar .dropdown .dropdown-text {
     display: flex;
@@ -486,7 +712,7 @@
     height: 40px;
     flex-direction: column;
     overflow: hidden;
-    width: 51%;
+    width: 43%;
     text-align: left;
     margin-top: 0px;
   }
@@ -568,5 +794,12 @@
   }
   .open .search-bar .searchGroup .bg-white div .videoSet .link div h1 {
     font-size: 10px;
+  }
+  .open .search-bar .cartIcon2 {
+    display: none;
+    font-size: 15px;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
   }
 }/*# sourceMappingURL=test.css.map */

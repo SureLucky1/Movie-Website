@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './test.css';
 import axios from "axios";
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import {
     NavbarBrand,
@@ -89,6 +92,7 @@ function Dropdownn({ }) {
             <NavbarBrand className="NavbarBrand" data-spotlight="C I N E P H I L E">
             C I N E P H I L E
             </NavbarBrand>
+            <Link to="/checkout"><FontAwesomeIcon className="cartIcon1" icon={faCartShopping} style={{fontSize: "25px", marginRight: "10px"}}/></Link>
           </Link>
             <div className="dropdown" >
                 <div id="drop-text" className="dropdown-text" ref={downRef} onClick={() => {setShow(!show); setShoww(false);}} >
@@ -168,7 +172,8 @@ function Dropdownn({ }) {
         
                 </div>}
         </div>
-        <Link to="/checkout"><h4>Cart<small> </small></h4></Link>
+        
+        <Link to="/checkout"><h4 className="cartIcon2"><FontAwesomeIcon  icon={faCartShopping} className="icon"/>Cart<small> </small></h4></Link>
         </div>
 
         </header>

@@ -167,7 +167,7 @@ const dispatch = useDispatch();
                 </Link>
                 <button className="btn btn-warning" onClick={()=>{
     dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
-    dispatch(addPrice({price:"40"}));
+    dispatch(addPrice({title: post.original_title, price:"40"}));
 }}>
     Add to cart
 </button>
