@@ -3,6 +3,14 @@
   background-color: white;
   margin-top: 0px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cart h2 {
+  display: flex;
+  font-size: 40px;
 }
 .cart .tablegroup {
   margin: 0px 20px;
@@ -75,8 +83,12 @@
   .cart {
     height: 100%;
     background-color: white;
-    margin-top: 0px;
+    margin-top: 40px;
     color: black;
+  }
+  .cart h2 {
+    display: flex;
+    font-size: 20px;
   }
   .cart .tablegroup {
     margin: 0px 20px;

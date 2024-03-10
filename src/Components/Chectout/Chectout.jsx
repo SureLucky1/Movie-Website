@@ -34,23 +34,25 @@ const Chectout = () => {
       <div className="cart">
         <h2>Cart Items</h2>
         <table className="tablegroup" style={{width:"100%"}}>
+          <thead>
   <tr>
     <th style={{width: "20%"}}>Movie Image</th>
     <th style={{width: "30%"}}>Movie Title</th>
     <th ></th>
     <th style={{width: "30%"}}>Movie Price</th>
-  </tr>
+  </tr></thead>
                     {Object.keys(cartitems).map(id => {
           return cartitems[id].map(item => (
-
+<tbody>
   <tr className="list" style={{padding: "50px 50px"}}>
     <td><img src={item.image} className="c-image" alt='' /></td>
     <td>{item.title}</td>
     <td><button className="btn btn-warning btn-sm" onClick={() => handleRemoveFromCart(item)}>Remove</button></td>
     <td style={{display:"flex", textAlign: "right"}}>${item.price}</td>
-  </tr>
+  </tr></tbody>
           ));
         })}
+        <tfoot>
     <tr className="listt" style={{padding: "50px 50px"}}>
     <td ></td>
     <td ></td>
@@ -61,7 +63,7 @@ const Chectout = () => {
 }}>
     Checkout
 </button></div></td>
-  </tr>
+  </tr></tfoot>
         </table>
         <div style={{display:"flex", justifyContent:"center"}}>
 <Modal showModal={showModal}setShowModal={setShowModal} setOverflow={setOverflow} setDisplay={setDisplay} setIndex={setIndex}/>
@@ -75,7 +77,7 @@ const Chectout = () => {
                <img src={item.image} className="c-image" alt='' />
                <div>
                  <h4>{item.title}</h4>
-                 <h4>{item.price}</h4>
+                 <h4>${item.price}</h4>
                  <button className="btn btn-warning btn-sm" onClick={() => handleRemoveFromCart(item)}>Remove</button>
                </div>
              </div>

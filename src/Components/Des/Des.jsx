@@ -75,7 +75,7 @@ background-position: center;
             <p class="des-title">{movieDetails.title}</p>
             <span id="rate">{rate}</span>
 
-<h1>$<span>{pricee}</span></h1>
+<h1>${pricee}</h1>
 <button className="btn btn-warning" onClick={() => {
   dispatch(addtoCart({title: movieDetails.original_title, image: `https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`, price: pricee}));
   dispatch(addPrice({title: movieDetails.original_title, price: pricee}));
@@ -126,6 +126,7 @@ background-position: center;
             <span id="rate">{rate}</span>
 
           </div>
+          <h1>${pricee}</h1>
           <span id="releaseDate">Release Date:{movieDetails.release_date}</span>
           <div class="des-genres">
             {movieDetails.genres?.map((ge) => (
@@ -155,6 +156,12 @@ background-position: center;
                 BACK
               </button>
             </Link>
+            <button className="btn btn-warning" onClick={() => {
+  dispatch(addtoCart({title: movieDetails.original_title, image: `https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`, price: pricee}));
+  dispatch(addPrice({title: movieDetails.original_title, price: pricee}));
+  }}>
+    BUY
+</button>
           </div>
 
       </div>

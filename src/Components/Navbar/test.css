@@ -328,7 +328,7 @@
     flex-direction: column;
     overflow: hidden;
     width: 50%;
-    position: relative;
+    position: static;
     right: 30px;
   }
   .open .search-bar .searchGroup .search-box {
@@ -508,7 +508,7 @@
     flex-direction: column;
     overflow: hidden;
     width: 100%;
-    position: relative;
+    position: static;
     right: 30px;
     margin-left: 5px;
   }
@@ -762,9 +762,10 @@
     width: 100%;
     position: absolute;
     top: 80px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255) !important;
     padding: 10px 15px;
     left: 0px;
+    z-index: 99;
   }
   .open .search-bar .searchGroup .bg-white div {
     width: 100%;

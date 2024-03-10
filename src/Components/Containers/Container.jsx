@@ -272,7 +272,7 @@ function Container() {
 
               </a>
             </Link>                
-            <h1>$<span>{cost}</span></h1>
+            <h1>${cost}</h1>
                 <button className="btn btn-warning" onClick={()=>{
     dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
     dispatch(addPrice({title: post.original_title, price: cost}));
@@ -397,7 +397,7 @@ function Container() {
 
               </a>
             </Link>
-                            <h1>$<span>{cost}</span></h1>
+                            <h1>${cost}</h1>
                 <button className="btn btn-warning" onClick={()=>{
     dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
     dispatch(addPrice({title: post.original_title, price: cost}));
@@ -528,7 +528,7 @@ function Container() {
               </a>
 
             </Link>
-                          <h1>$<span>{cost}</span></h1>
+                          <h1>${cost}</h1>
                 <button className="btn btn-warning" onClick={()=>{
     dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
     dispatch(addPrice({title: post.original_title, price: cost}));
@@ -684,7 +684,7 @@ function Container() {
 
               </a>
             </Link>
-                            <h1>$<span>{cost}</span></h1>
+                            <h1>${cost}</h1>
                 <button className="btn btn-warning" onClick={()=>{
     dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
     dispatch(addPrice({title: post.original_title, price: cost}));

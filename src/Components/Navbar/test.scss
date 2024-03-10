@@ -396,7 +396,7 @@
                 flex-direction: column;
                 overflow: hidden;
                 width: 50%;
-                position: relative;
+                position: static; //不能用relative,因會令search result不能顯示
                 right: 30px;
 
                 .search-box {
@@ -615,7 +615,7 @@
                 flex-direction: column;
                 overflow: hidden;
                 width: 100%;
-                position: relative;
+                position: static;
                 right: 30px;
                 margin-left: 5px;
 
@@ -908,9 +908,10 @@
                     width: 100%;
                     position: absolute;
                     top: 80px;
-                    background-color: rgb(255, 255, 255);
+                    background-color: rgb(255, 255, 255) !important;
                     padding: 10px 15px;
                     left: 0px;
+                    z-index: 99;
 
                     div {
                         width: 100%;
