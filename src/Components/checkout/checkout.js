@@ -1,12 +1,12 @@
-import "./Chectout.css";
+import "./checkout.css";
 import {useSelector, useDispatch} from "react-redux"
-import { removefromCart, addtoCart} from '../Redux/cartSlice';
-import { addPrice, subtractPrice} from '../Redux/priceSlice';
-import Modal from './Modal/Modal2'  
+import { removefromCart, addtoCart} from '../redux/cartSlice';
+import { addPrice, subtractPrice} from '../redux/priceSlice';
+import Modal from './Modal/payment'  
 import React,{useState, useEffect, useRef} from "react";
 
-const Chectout = () => {
-  const [display, setDisplay] = useState("flex");
+const Checkout = () => {
+  const [, setDisplay] = useState("flex");
   const [index, setIndex] = useState(50);
   const [showModal, setShowModal] = useState(false);
   const [overflow, setOverflow] = useState('none');
@@ -99,4 +99,4 @@ const Chectout = () => {
   };
  
 
-export default Chectout;
+export default Checkout;

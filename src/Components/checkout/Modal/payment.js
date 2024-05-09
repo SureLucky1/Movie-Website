@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart } from '../../Redux/cartSlice';
-import { clearTotal } from '../../Redux/priceSlice';
+import { clearCart } from '../../redux/cartSlice';
+import { clearTotal } from '../../redux/priceSlice';
 import "./Modal.css";
 import { MdClose } from 'react-icons/md';
 const Modal = ({ showModal, setShowModal }) => {

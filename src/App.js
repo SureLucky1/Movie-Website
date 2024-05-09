@@ -1,18 +1,18 @@
 import "./App.css";
 import { Provider } from "react-redux";
 import { MyContextProvider } from "./index";
-import store from "./Components/Redux/store";
+import store from "./Components/redux/store";
 import { Routes, Route, useLocation} from "react-router-dom";
 
 import Home from "./Components/Home";
-import Description from "./Components/Des/Des";
+import Description from "./Components/des/des";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
-import MoviePage from "./Components/MoviePage/MoviePage";
-import GenresPage from "./Components/GenresPage/GenresPage";
-import TopUp from "./Components/TopUp/TopUp"; 
-import Dropdownn from "./Components/Navbar/test"
-import Chectout from "./Components/Chectout/Chectout";
+import MoviePage from "./Components/movie-page/movie-page";
+import GenresPage from "./Components/genres-page/genres-page";
+import TopUp from "./Components/top-up/top-up"; 
+import Navigation from "./Components/navbar/navbar"
+import Chectout from "./Components/checkout/checkout";
 function App() {
   const location = useLocation();   
   const [overFlow, setOverFlow] = useState(null);
@@ -69,7 +69,7 @@ function App() {
   return (
 <Provider store={store}>
 <MyContextProvider value={ Dollar }>
-      <Dropdownn moviesGenres={moviesGenres} />
+      <Navigation moviesGenres={moviesGenres} />
     <main className="App">
       <style>
         {`

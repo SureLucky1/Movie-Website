@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext} from "react";
-import "./Dess.css";
+import "./dess.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import {useDispatch, useSelector} from 'react-redux';
-import { addtoCart } from '../Redux/cartSlice'
-import { addPrice } from '../Redux/priceSlice'
+import { addtoCart } from '../redux/cartSlice'
+import { addPrice } from '../redux/priceSlice'
 import context from "../../index";  
 const Description = () => {
   const Dollar = useContext(context);

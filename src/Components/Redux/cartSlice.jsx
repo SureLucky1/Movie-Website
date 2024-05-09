@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {useDispatch} from 'react-redux';
-import { addPrice } from '../Redux/priceSlice'
+import { addPrice } from './priceSlice'
 import { useEffect } from "react";
 
 // useEffect(() =>{

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './test.css';
+import './navbar.css';
 import axios from "axios";
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,7 +9,7 @@ import {
     NavbarBrand,
     NavLink
   } from "reactstrap";
-function Dropdownn({ }) {
+function Navigation({ }) {
     const [showw, setShoww] = useState(false);
     const [show, setShow] = useState(false);
     const [rotate, setRotate] = useState('0deg');
@@ -180,4 +180,4 @@ function Dropdownn({ }) {
     );
 }
 
-export default Dropdownn;
+export default Navigation;

@@ -3,8 +3,8 @@ import "./containerr.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import {useDispatch} from 'react-redux';
-import { addtoCart } from '../Redux/cartSlice'
-import { addPrice } from '../Redux/priceSlice'
+import { addtoCart } from '../redux/cartSlice'
+import { addPrice } from '../redux/priceSlice'
 import context from "../../index";  
 
 function Container() {

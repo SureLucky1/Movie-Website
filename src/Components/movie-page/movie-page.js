@@ -1,47 +1,39 @@
-import React, { useState, useEffect, useContext } from "react";
-import "./GenresPage.css";
+import React, { useEffect, useState } from "react";
+import "./movie-page.css";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import Footer from "../Footer/Footer";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import {useDispatch} from 'react-redux';
-import { addtoCart } from '../Redux/cartSlice'
-import { addPrice } from '../Redux/priceSlice'
-import context from "../../index";  
+import "react-loading-skeleton/dist/skeleton.css";
+import axios from "axios";
+import Footer from "../footer/footer";
 
-const GenresPage = ({ moviesGenres }) => {
-  const Dollar = useContext(context);
-  const { genres } = useParams();
-  const [genreMovies, setGenreMovies] = useState(Array(20).fill({}));
-  console.log(genreMovies);
+const MoviePage = () => {
+  const [movieList, setMovieList] = useState(Array(20).fill({}));
   const [isLoading, setIsLoading] = useState(true);
+  const { type } = useParams();
   const [pageNum, setPageNum] = useState(1);
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) || []
   );
 
-
   useEffect(() => {
     localStorage.setItem("favorite", JSON.stringify(favorite));
   }, [favorite]);
 
-
-
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genres}&api_key=6a3a9e9a61085d657b30d36d1c7b5ba7&page=${pageNum}`
+        `https://api.themoviedb.org/3/movie/${type}?api_key=6a3a9e9a61085d657b30d36d1c7b5ba7&page=${pageNum}`
       )
       .then((res) => {
-        setGenreMovies(res.data.results);
-
+        console.log(res);
+        setMovieList(res.data.results);
         setIsLoading(true);
         setTimeout(() => {
           setIsLoading(false);
         }, 1500);
       });
-  }, [genres, pageNum]);
-  console.log("genreMovies", genreMovies);
+  }, [type, pageNum]);
+
 
   function heartFunction(movieId) {
     if (favorite.includes(movieId)) {
@@ -50,24 +42,17 @@ const GenresPage = ({ moviesGenres }) => {
       setFavorite([...favorite, movieId]);
     }
     localStorage.setItem("favorite", JSON.stringify([...favorite, movieId]));
-
   }
-const dispatch = useDispatch();
+
   return (
     <section>
-      <h1 className="slider_title">{moviesGenres.name}</h1>
+      <h1 className="slider_title">
+        {type.charAt(0).toUpperCase() + type.slice(1).replace("_", "-")}
+      </h1>
       <div>
         <div className="flex-parent">
-          {genreMovies.map((post) =>{
-                     let cost;
-                     if (post.vote_average >= 8.2) {
-                       cost = Dollar.top_rated;
-                     } else if (post.popularity >= 1400) {
-                       cost = Dollar.popular;
-                     } else {
-                       cost = Dollar.general;
-                     }
-          return (            isLoading ? (
+          {movieList.map((post) =>
+            isLoading ? (
               <div className="moviebox">
                 <SkeletonTheme baseColor="#202020" highlightColor="#444">
                   <Skeleton duration={2} height={300} />
@@ -76,8 +61,7 @@ const dispatch = useDispatch();
             ) : (
               <div className="moviebox">
                 <Link
-                  to={`/movie/${post.id}`}  
-                  key={post.id}
+                  to={`/movie/${post.id}`}
                   style={{ textDecoration: "none" }}
                 >
                   <a
@@ -85,93 +69,72 @@ const dispatch = useDispatch();
                     href={`https://image.tmdb.org/t/p/original/${post.poster_path}`}
                     target="_blank"
                   >
-                    {post.poster_path ? (
-                      <img  
-                        className="movieimg"
-                        src={`https://image.tmdb.org/t/p/original/${post.poster_path}`}
-                      />
-                    ) : (
-                      <div className="noimg"></div>
-                    )}
+                    <img
+                      lazy
+                      className="movieimg"
+                      src={`https://image.tmdb.org/t/p/original/${post.poster_path}`}
+                    />
                     <p className="caption">{`${post.original_title}`}</p>
                     <div className="star-rating">
                       {post.vote_average >= 2 ? (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
                         />
                       ) : (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
                         />
                       )}
                       {post.vote_average >= 4 ? (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
                         />
                       ) : (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
                         />
                       )}
                       {post.vote_average >= 6 ? (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
                         />
                       ) : (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
                         />
                       )}
                       {post.vote_average >= 8 ? (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
                         />
                       ) : (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
                         />
                       )}
                       {post.vote_average >= 10 ? (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.svg"
                         />
                       ) : (
                         <img
-                          alt=""
                           width="20px"
                           src="https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-full-icon.svg"
                         />
                       )}
                       {post.vote_average !== 0 && ` (${post.vote_average})`}
                     </div>
-                    <h1>$<span>{cost}</span></h1>
                   </a>
                 </Link>
-                <button className="btn btn-warning" onClick={()=>{
-    dispatch(addtoCart({title: post.original_title, image: `https://image.tmdb.org/t/p/original/${post.poster_path}`, price: cost}));
-    dispatch(addPrice({title: post.original_title, price:"40"}));
-}}>
-    Add to cart
-</button>
-
                 <Link>
                   <button
                     className="heart_btn"
@@ -191,9 +154,8 @@ const dispatch = useDispatch();
                   </button>
                 </Link>
               </div>
-            ))
-
-                    })}
+            )
+          )}
         </div>
       </div>
       <div className="prev-next-parent">
@@ -237,9 +199,10 @@ const dispatch = useDispatch();
           </button>
         </div>
       </div>
+
       <Footer />
     </section>
   );
 };
 
-export default GenresPage;
+export default MoviePage;

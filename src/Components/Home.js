@@ -1,8 +1,8 @@
 import React from "react";
-import Carousel1 from "./Carousel1/Carousel1";
-import Container from "./Containers/Container";
+import Carousel1 from "./carousel1/carousel1";
+import Container from "./containers/container";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Footer from "./Footer/Footer"; 
+import Footer from "./footer/footer"; 
 
 function Home({ posts }) {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "./TopUp.css";
+import "./top-up.css";
 
 function TopUp() {
     const scrollToTop = () =>{

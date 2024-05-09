@@ -170,16 +170,22 @@
 
 
                 color: var(--black);
-                height: 100px;
+                height: 80px;
 
 
                 input {
-
-                    font-size: 3rem;
+                    padding-left: 10px;
+                    font-size: 2.5rem;
                     font-weight: 500;
                     color: var(--black);
                     border: 0;
                     outline: 0;
+                    border-bottom: 2px solid black;
+
+                    &:focus {
+                        border-bottom: 2px solid black;
+
+                    }
 
                     &::placeholder {
                         font-size: 2.5rem;
